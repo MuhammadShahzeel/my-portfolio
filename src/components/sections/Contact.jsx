@@ -21,27 +21,52 @@ const CustomTextField = styled(TextField)(() => ({
       backgroundColor: "rgba(55, 65, 81, 0.3)",
       boxShadow: "inset 0 -2px 0 0 #D97706",
     },
-    // Add autofill styles
+    // Handle autofill states
     "& .MuiFilledInput-input:-webkit-autofill": {
       WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
       WebkitTextFillColor: "#E5E7EB",
       borderRadius: "0.5rem",
     },
-    "& .MuiFilledInput-input:-webkit-autofill:hover, & .MuiFilledInput-input:-webkit-autofill:focus, & .MuiFilledInput-input:-webkit-autofill:active": {
+    "& .MuiFilledInput-input:-webkit-autofill:hover, & .MuiFilledInput-input:-webkit-autofill:focus": {
       WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
       WebkitTextFillColor: "#E5E7EB",
+    },
+    // Handle invalid/error states
+    "& .MuiFilledInput-input:-webkit-autofill:invalid": {
+      WebkitTextFillColor: "#E5E7EB",
+    },
+    "& .MuiFilledInput-input:invalid": {
+      color: "#E5E7EB",
+      boxShadow: "none",
+    },
+    "& .MuiFilledInput-input:invalid:hover": {
+      backgroundColor: "rgba(55, 65, 81, 0.3)",
     },
   },
   "& .MuiFilledInput-input": { 
     color: "#E5E7EB",
-    // Add transition for autofill
     transition: "background-color 5000s ease-in-out 0s",
+    // Prevent black text on validation errors
+    "&:invalid": {
+      color: "#E5E7EB !important",
+      boxShadow: "none !important",
+    },
   },
   "& .MuiInputLabel-root": {
     color: "#9CA3AF",
     "@media (max-width: 425px)": { fontSize: "0.875rem" },
   },
   "& .MuiInputLabel-root.Mui-focused": { color: "#D97706" },
+  // Override browser validation styles
+  "& .Mui-error": {
+    "& .MuiFilledInput-input": {
+      color: "#E5E7EB !important",
+      boxShadow: "inset 0 -2px 0 0 #ef4444 !important",
+    },
+    "& .MuiInputLabel-root": {
+      color: "#ef4444 !important",
+    },
+  },
 }));
 
 const Contact = () => {
