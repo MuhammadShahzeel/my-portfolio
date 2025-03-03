@@ -12,39 +12,51 @@ import SocialLinks from "../shared/SocialLinks";
 
 const CustomTextField = styled(TextField)(() => ({
   "& .MuiFilledInput-root": {
-    backgroundColor: "rgba(55, 65, 81, 0.3)",
+    backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     borderRadius: "0.5rem",
-    color: "#E5E7EB",
-    border: "none",
-    "&:before, &:after, &:hover:not(.Mui-disabled):before": {
-      display: "none"
-    },
+    color: "#E5E7EB !important",
+    "&:before, &:after": { display: "none" },
     "&:hover": { 
-      backgroundColor: "rgba(55, 65, 81, 0.3)",
-      border: "none"
+      backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     },
     "&.Mui-focused": {
-      backgroundColor: "rgba(55, 65, 81, 0.3)",
-      boxShadow: "none",
-      outline: "none"
+      backgroundColor: "rgba(55, 65, 81, 0.3) !important",
+      boxShadow: "inset 0 -2px 0 0 #D97706 !important",
     },
- 
+    // Autofill overrides
     "& .MuiFilledInput-input:-webkit-autofill": {
-      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
+      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset !important",
       WebkitTextFillColor: "#E5E7EB !important",
     },
   },
-  "& .MuiFilledInput-input": { 
-    color: "#E5E7EB !important", // Add !important here
-    transition: "background-color 5000s ease-in-out 0s",
-    outline: "none",
-    border: "none"
+  "& .MuiFilledInput-input": {
+    color: "#E5E7EB !important",
+    // Force text color in spellcheck states
+    "&[spellcheck='true'], &:focus:invalid, &::spelling-error": {
+      color: "#E5E7EB !important",
+      textDecorationColor: "#D97706 !important", // Custom squiggle color
+    },
+    // Override validation bubble
+    "&::-webkit-validation-bubble-message": {
+      color: "#E5E7EB !important",
+      backgroundColor: "rgba(17, 24, 39, 0.9) !important",
+    },
   },
   "& .MuiInputLabel-root": {
-    color: "#9CA3AF",
+    color: "#9CA3AF !important",
     "@media (max-width: 425px)": { fontSize: "0.875rem" },
+    "&.Mui-focused": { 
+      color: "#D97706 !important",
+    },
+    "&.Mui-error": {
+      color: "#ef4444 !important",
+    },
   },
-  "& .MuiInputLabel-root.Mui-focused": { color: "#D97706" },
+  // Error message styling
+  "& .MuiFormHelperText-root": {
+    color: "#ef4444 !important",
+    fontSize: "0.875rem",
+  },
 }));
 
 const Contact = () => {
