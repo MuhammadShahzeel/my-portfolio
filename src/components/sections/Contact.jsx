@@ -12,64 +12,36 @@ import SocialLinks from "../shared/SocialLinks";
 
 const CustomTextField = styled(TextField)(() => ({
   "& .MuiFilledInput-root": {
-    backgroundColor: "rgba(55, 65, 81, 0.3) !important",
-    borderRadius: "0.5rem",
-    color: "#E5E7EB !important",
-    "&:before, &:after": { display: "none" },
-    "&:hover": { 
-      backgroundColor: "rgba(55, 65, 81, 0.3) !important",
-    },
+    // ... other existing styles
+    border: "none !important",
+    outline: "none !important",
     "&.Mui-focused": {
       backgroundColor: "rgba(55, 65, 81, 0.3) !important",
-      boxShadow: "inset 0 -2px 0 0 #D97706 !important",
-    },
-    // Autofill handling
-    "& .MuiFilledInput-input:-webkit-autofill": {
-      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset !important",
-      WebkitTextFillColor: "#E5E7EB !important",
-      borderRadius: "0.5rem",
-    },
-    // Invalid state handling
-    "& .MuiFilledInput-input:-webkit-autofill:invalid": {
-      WebkitTextFillColor: "#E5E7EB !important",
-    },
-    "& .MuiFilledInput-input:invalid": {
-      color: "#E5E7EB !important",
-      boxShadow: "none !important",
+      boxShadow: `
+        inset 0 -2px 0 0 #D97706,  // Bottom highlight
+        inset 0 0 0 0 transparent,  // Top
+        inset 0 0 0 0 transparent,  // Right
+        inset 0 0 0 0 transparent   // Left
+      `,
     },
   },
   "& .MuiFilledInput-input": {
-    color: "#E5E7EB !important",
-    transition: "background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important",
-    // Spell check handling
-    "&:invalid, &:user-invalid, &[aria-invalid='true']": {
-      color: "#E5E7EB !important",
+    // ... other existing styles
+    "&:focus, &:active": {
       boxShadow: "none !important",
+      outline: "none !important",
     },
-    // Browser validation message
-    "&::-webkit-validation-bubble-message": {
-      color: "#E5E7EB !important",
-      backgroundColor: "rgba(17, 24, 39, 0.9) !important",
-    },
-  },
-  "& .MuiInputLabel-root": {
-    color: "#9CA3AF !important",
-    "@media (max-width: 425px)": { fontSize: "0.875rem" },
-    "&.Mui-focused": { 
-      color: "#D97706 !important",
-    },
-    "&.Mui-error": {
-      color: "#ef4444 !important",
+    // Remove Firefox's inner focus border
+    "&:-moz-focusring": {
+      color: "transparent",
+      textShadow: "0 0 0 #E5E7EB",
     },
   },
-  // Error state styling
-  "& .MuiFormHelperText-root": {
-    color: "#ef4444 !important",
-    fontSize: "0.875rem",
-  },
-  // Spellcheck underline
-  "& .MuiFilledInput-input::spelling-error": {
-    textDecorationColor: "#D97706 !important",
+  // Target browser-specific focus rings
+  "@supports (-webkit-appearance: none)": {
+    "& .MuiFilledInput-input": {
+      "-webkit-tap-highlight-color": "transparent",
+    },
   },
 }));
 
