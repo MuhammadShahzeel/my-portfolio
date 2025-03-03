@@ -93,12 +93,9 @@ const Home = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Added Hi, I am tagline */}
-          <motion.div 
-            variants={itemVariants}
-            className="mb-2 md:mb-3"
-          >
-            <span className="inline-block text-lg md:text-xl lg:text-2xl font-medium text-gray-200 tracking-wide">
+        
+          <motion.div variants={itemVariants} className="mb-2 md:mb-3">
+            <span className="inline-block text-2xl md:text-3xl lg:text-4xl font-medium text-gray-200 tracking-wide">
               Hi, I am
             </span>
           </motion.div>

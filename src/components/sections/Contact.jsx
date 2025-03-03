@@ -15,23 +15,23 @@ const CustomTextField = styled(TextField)(() => ({
     backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     borderRadius: "0.5rem",
     color: "#E5E7EB !important",
-    // Remove default underline
+
     "&:before, &:after": { display: "none" },
     "&:hover": { 
       backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     },
     "&.Mui-focused": {
       backgroundColor: "rgba(55, 65, 81, 0.3) !important",
-      // Inset box-shadow creates a border inside the input, only on the bottom.
+   
       boxShadow: "inset 0 -2px 0 0 #D97706 !important",
     },
-    // Autofill handling
+
     "& .MuiFilledInput-input:-webkit-autofill": {
       WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset !important",
       WebkitTextFillColor: "#E5E7EB !important",
       borderRadius: "0.5rem",
     },
-    // Invalid state handling
+   
     "& .MuiFilledInput-input:-webkit-autofill:invalid": {
       WebkitTextFillColor: "#E5E7EB !important",
     },
@@ -43,12 +43,12 @@ const CustomTextField = styled(TextField)(() => ({
   "& .MuiFilledInput-input": {
     color: "#E5E7EB !important",
     transition: "background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important",
-    // Spell check handling
+
     "&:invalid, &:user-invalid, &[aria-invalid='true']": {
       color: "#E5E7EB !important",
       boxShadow: "none !important",
     },
-    // Browser validation message
+
     "&::-webkit-validation-bubble-message": {
       color: "#E5E7EB !important",
       backgroundColor: "rgba(17, 24, 39, 0.9) !important",
@@ -64,12 +64,12 @@ const CustomTextField = styled(TextField)(() => ({
       color: "#ef4444 !important",
     },
   },
-  // Error state styling
+
   "& .MuiFormHelperText-root": {
     color: "#ef4444 !important",
     fontSize: "0.875rem",
   },
-  // Spellcheck underline
+ 
   "& .MuiFilledInput-input::spelling-error": {
     textDecorationColor: "#D97706 !important",
   },
