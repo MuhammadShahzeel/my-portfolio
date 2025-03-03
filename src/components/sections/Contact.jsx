@@ -12,49 +12,66 @@ import SocialLinks from "../shared/SocialLinks";
 
 const CustomTextField = styled(TextField)(() => ({
   "& .MuiFilledInput-root": {
-    backgroundColor: "rgba(55, 65, 81, 0.3)",
+    backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     borderRadius: "0.5rem",
-    color: "#E5E7EB",
-    border: "none", // Ensures no border
-    "&:before, &:after, &:hover:not(.Mui-disabled):before": {
-      display: "none"
-    },
+    color: "#E5E7EB !important",
+    "&:before, &:after": { display: "none" },
     "&:hover": { 
-      backgroundColor: "rgba(55, 65, 81, 0.3)",
-      border: "none" // Remove hover border
+      backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     },
     "&.Mui-focused": {
-      backgroundColor: "rgba(55, 65, 81, 0.3)",
-      boxShadow: "none", // Remove focus shadow
-      outline: "none" // Remove browser default outline
+      backgroundColor: "rgba(55, 65, 81, 0.3) !important",
+      boxShadow: "inset 0 -2px 0 0 #D97706 !important",
     },
-    // Autofill styles
+    // Autofill handling
     "& .MuiFilledInput-input:-webkit-autofill": {
-      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
-      WebkitTextFillColor: "#E5E7EB",
+      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset !important",
+      WebkitTextFillColor: "#E5E7EB !important",
+      borderRadius: "0.5rem",
+    },
+    // Invalid state handling
+    "& .MuiFilledInput-input:-webkit-autofill:invalid": {
+      WebkitTextFillColor: "#E5E7EB !important",
+    },
+    "& .MuiFilledInput-input:invalid": {
+      color: "#E5E7EB !important",
+      boxShadow: "none !important",
     },
   },
-  "& .MuiFilledInput-input": { 
-    color: "#E5E7EB",
-    transition: "background-color 5000s ease-in-out 0s",
-    outline: "none", // Remove input outline
-    border: "none" // Ensure no input border
-  },
-  // Override styles when error state is active on the input
-  "& .MuiFilledInput-input.Mui-error": {
-    color: "#E5E7EB",
-  },
-  "& .MuiFilledInput-input.Mui-error:-webkit-autofill": {
-    WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
-    WebkitTextFillColor: "#E5E7EB",
+  "& .MuiFilledInput-input": {
+    color: "#E5E7EB !important",
+    transition: "background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important",
+    // Spell check handling
+    "&:invalid, &:user-invalid, &[aria-invalid='true']": {
+      color: "#E5E7EB !important",
+      boxShadow: "none !important",
+    },
+    // Browser validation message
+    "&::-webkit-validation-bubble-message": {
+      color: "#E5E7EB !important",
+      backgroundColor: "rgba(17, 24, 39, 0.9) !important",
+    },
   },
   "& .MuiInputLabel-root": {
-    color: "#9CA3AF",
+    color: "#9CA3AF !important",
     "@media (max-width: 425px)": { fontSize: "0.875rem" },
+    "&.Mui-focused": { 
+      color: "#D97706 !important",
+    },
+    "&.Mui-error": {
+      color: "#ef4444 !important",
+    },
   },
-  "& .MuiInputLabel-root.Mui-focused": { color: "#D97706" },
+  // Error state styling
+  "& .MuiFormHelperText-root": {
+    color: "#ef4444 !important",
+    fontSize: "0.875rem",
+  },
+  // Spellcheck underline
+  "& .MuiFilledInput-input::spelling-error": {
+    textDecorationColor: "#D97706 !important",
+  },
 }));
-
 
 const Contact = () => {
   const [name, setName] = useState("");
