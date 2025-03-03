@@ -15,30 +15,30 @@ const CustomTextField = styled(TextField)(() => ({
     backgroundColor: "rgba(55, 65, 81, 0.3)",
     borderRadius: "0.5rem",
     color: "#E5E7EB",
-    border: "none", // Add this to ensure no border
+    border: "none",
     "&:before, &:after, &:hover:not(.Mui-disabled):before": {
       display: "none"
     },
     "&:hover": { 
       backgroundColor: "rgba(55, 65, 81, 0.3)",
-      border: "none" // Remove hover border
+      border: "none"
     },
     "&.Mui-focused": {
       backgroundColor: "rgba(55, 65, 81, 0.3)",
-      boxShadow: "none", // Remove focus shadow
-      outline: "none" // Remove browser default outline
+      boxShadow: "none",
+      outline: "none"
     },
-    // Autofill styles
+ 
     "& .MuiFilledInput-input:-webkit-autofill": {
       WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
-      WebkitTextFillColor: "#E5E7EB",
+      WebkitTextFillColor: "#E5E7EB !important",
     },
   },
   "& .MuiFilledInput-input": { 
-    color: "#E5E7EB",
+    color: "#E5E7EB !important", // Add !important here
     transition: "background-color 5000s ease-in-out 0s",
-    outline: "none", // Remove input outline
-    border: "none" // Ensure no input border
+    outline: "none",
+    border: "none"
   },
   "& .MuiInputLabel-root": {
     color: "#9CA3AF",
