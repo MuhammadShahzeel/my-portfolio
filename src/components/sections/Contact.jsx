@@ -15,27 +15,30 @@ const CustomTextField = styled(TextField)(() => ({
     backgroundColor: "rgba(55, 65, 81, 0.3)",
     borderRadius: "0.5rem",
     color: "#E5E7EB",
-    "&:before, &:after": { display: "none" },
-    "&:hover": { backgroundColor: "rgba(55, 65, 81, 0.3)" },
+    border: "none", // Add this to ensure no border
+    "&:before, &:after, &:hover:not(.Mui-disabled):before": {
+      display: "none"
+    },
+    "&:hover": { 
+      backgroundColor: "rgba(55, 65, 81, 0.3)",
+      border: "none" // Remove hover border
+    },
     "&.Mui-focused": {
       backgroundColor: "rgba(55, 65, 81, 0.3)",
-      boxShadow: "inset 0 -2px 0 0 #D97706",
+      boxShadow: "none", // Remove focus shadow
+      outline: "none" // Remove browser default outline
     },
-    // Add autofill styles
+    // Autofill styles
     "& .MuiFilledInput-input:-webkit-autofill": {
-      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
-      WebkitTextFillColor: "#E5E7EB",
-      borderRadius: "0.5rem",
-    },
-    "& .MuiFilledInput-input:-webkit-autofill:hover, & .MuiFilledInput-input:-webkit-autofill:focus, & .MuiFilledInput-input:-webkit-autofill:active": {
       WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
       WebkitTextFillColor: "#E5E7EB",
     },
   },
   "& .MuiFilledInput-input": { 
     color: "#E5E7EB",
-    // Add transition for autofill
     transition: "background-color 5000s ease-in-out 0s",
+    outline: "none", // Remove input outline
+    border: "none" // Ensure no input border
   },
   "& .MuiInputLabel-root": {
     color: "#9CA3AF",
