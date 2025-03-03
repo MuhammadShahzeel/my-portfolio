@@ -15,12 +15,14 @@ const CustomTextField = styled(TextField)(() => ({
     backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     borderRadius: "0.5rem",
     color: "#E5E7EB !important",
+    // Remove default underline
     "&:before, &:after": { display: "none" },
     "&:hover": { 
       backgroundColor: "rgba(55, 65, 81, 0.3) !important",
     },
     "&.Mui-focused": {
       backgroundColor: "rgba(55, 65, 81, 0.3) !important",
+      // Inset box-shadow creates a border inside the input, only on the bottom.
       boxShadow: "inset 0 -2px 0 0 #D97706 !important",
     },
     // Autofill handling
@@ -72,6 +74,7 @@ const CustomTextField = styled(TextField)(() => ({
     textDecorationColor: "#D97706 !important",
   },
 }));
+
 
 const Contact = () => {
   const [name, setName] = useState("");
