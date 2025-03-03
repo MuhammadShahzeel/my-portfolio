@@ -15,7 +15,7 @@ const CustomTextField = styled(TextField)(() => ({
     backgroundColor: "rgba(55, 65, 81, 0.3)",
     borderRadius: "0.5rem",
     color: "#E5E7EB",
-    border: "none", // Add this to ensure no border
+    border: "none", // Ensures no border
     "&:before, &:after, &:hover:not(.Mui-disabled):before": {
       display: "none"
     },
@@ -40,12 +40,21 @@ const CustomTextField = styled(TextField)(() => ({
     outline: "none", // Remove input outline
     border: "none" // Ensure no input border
   },
+  // Override styles when error state is active on the input
+  "& .MuiFilledInput-input.Mui-error": {
+    color: "#E5E7EB",
+  },
+  "& .MuiFilledInput-input.Mui-error:-webkit-autofill": {
+    WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
+    WebkitTextFillColor: "#E5E7EB",
+  },
   "& .MuiInputLabel-root": {
     color: "#9CA3AF",
     "@media (max-width: 425px)": { fontSize: "0.875rem" },
   },
   "& .MuiInputLabel-root.Mui-focused": { color: "#D97706" },
 }));
+
 
 const Contact = () => {
   const [name, setName] = useState("");
