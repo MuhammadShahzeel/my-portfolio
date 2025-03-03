@@ -12,37 +12,36 @@ import SocialLinks from "../shared/SocialLinks";
 
 const CustomTextField = styled(TextField)(() => ({
   "& .MuiFilledInput-root": {
-    // ... other existing styles
-    border: "none !important",
-    outline: "none !important",
+    backgroundColor: "rgba(55, 65, 81, 0.3)",
+    borderRadius: "0.5rem",
+    color: "#E5E7EB",
+    "&:before, &:after": { display: "none" },
+    "&:hover": { backgroundColor: "rgba(55, 65, 81, 0.3)" },
     "&.Mui-focused": {
-      backgroundColor: "rgba(55, 65, 81, 0.3) !important",
-      boxShadow: `
-        inset 0 -2px 0 0 #D97706,  // Bottom highlight
-        inset 0 0 0 0 transparent,  // Top
-        inset 0 0 0 0 transparent,  // Right
-        inset 0 0 0 0 transparent   // Left
-      `,
+      backgroundColor: "rgba(55, 65, 81, 0.3)",
+      boxShadow: "inset 0 -2px 0 0 #D97706",
+    },
+    // Add autofill styles
+    "& .MuiFilledInput-input:-webkit-autofill": {
+      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
+      WebkitTextFillColor: "#E5E7EB",
+      borderRadius: "0.5rem",
+    },
+    "& .MuiFilledInput-input:-webkit-autofill:hover, & .MuiFilledInput-input:-webkit-autofill:focus, & .MuiFilledInput-input:-webkit-autofill:active": {
+      WebkitBoxShadow: "0 0 0px 1000px rgba(55, 65, 81, 0.3) inset",
+      WebkitTextFillColor: "#E5E7EB",
     },
   },
-  "& .MuiFilledInput-input": {
-    // ... other existing styles
-    "&:focus, &:active": {
-      boxShadow: "none !important",
-      outline: "none !important",
-    },
-    // Remove Firefox's inner focus border
-    "&:-moz-focusring": {
-      color: "transparent",
-      textShadow: "0 0 0 #E5E7EB",
-    },
+  "& .MuiFilledInput-input": { 
+    color: "#E5E7EB",
+    // Add transition for autofill
+    transition: "background-color 5000s ease-in-out 0s",
   },
-  // Target browser-specific focus rings
-  "@supports (-webkit-appearance: none)": {
-    "& .MuiFilledInput-input": {
-      "-webkit-tap-highlight-color": "transparent",
-    },
+  "& .MuiInputLabel-root": {
+    color: "#9CA3AF",
+    "@media (max-width: 425px)": { fontSize: "0.875rem" },
   },
+  "& .MuiInputLabel-root.Mui-focused": { color: "#D97706" },
 }));
 
 const Contact = () => {
