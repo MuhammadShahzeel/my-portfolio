@@ -212,7 +212,7 @@ const Projects = () => {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`pdx max-[387px]:text-xs flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-red-500 to-amber-400 text-primary font-semibold transition duration-200 text-sm ${
+                          className={`no-hover pdx max-[387px]:text-xs flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-red-500 to-amber-400 text-primary font-semibold transition duration-50 text-sm ${
                             !isTouchDevice
                               ? "transform hover:scale-105 hover:shadow-xl hover:brightness-90"
                               : ""
@@ -228,7 +228,7 @@ const Projects = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`max-[387px]:text-xs font-semibold flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gray-700/50 text-gray-200 transition duration-50 text-sm ${
+                          className={`pdx no-hover max-[387px]:text-xs font-semibold flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gray-700/50 text-gray-200 transition duration-50 text-sm ${
                             !isTouchDevice
                               ? "transform hover:scale-105 hover:bg-gray-700 hover:text-white hover:shadow-xl"
                               : ""
