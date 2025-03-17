@@ -80,7 +80,7 @@ const Home = () => {
     [shouldReduceMotion]
   );
 
-  const buttonClass = `bg-gradient-to-r from-red-500 to-amber-400 text-primary px-6 py-2.5 max-[425px]:px-5 max-[425px]:py-2.5 max-[425px]:text-sm md:px-8 md:py-3 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-amber-400 inline-flex items-center justify-center cursor-pointer ${
+  const buttonClass = `group bg-gradient-to-r from-red-500 to-amber-400 text-primary px-6 py-2.5 max-[425px]:px-5 max-[425px]:py-2.5 max-[425px]:text-sm md:px-8 md:py-3 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-amber-400 inline-flex items-center justify-center cursor-pointer ${
     isTouchDevice ? "" : "hover:shadow-lg hover:brightness-90"
   }`;
 
@@ -93,13 +93,11 @@ const Home = () => {
           initial="hidden"
           animate="visible"
         >
-        
           <motion.div variants={itemVariants} className="mb-2 md:mb-3">
             <span className="inline-block text-2xl md:text-3xl lg:text-4xl font-medium text-gray-200 tracking-wide">
               Hi, I am
             </span>
           </motion.div>
-          
           <motion.h1
             variants={itemVariants}
             className="md:mb-6 max-[425px]:mb-3 font-heading"
@@ -128,7 +126,10 @@ const Home = () => {
           </motion.div>
           <Link to="contact" smooth={true} duration={500}>
             <motion.div variants={buttonVariants} className={buttonClass}>
-              Let&apos;s Connect <FaArrowRight className="ml-2" />
+              Let's Connect{" "}
+              <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                <FaArrowRight />
+              </span>
             </motion.div>
           </Link>
         </motion.div>
