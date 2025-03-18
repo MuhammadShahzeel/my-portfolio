@@ -8,7 +8,7 @@ import Contact from "./components/sections/Contact";
 import Projects from "./components/sections/Projects";
 import Footer from "./components/layout/Footer";
 
-function App() {
+const App = () => {
   return (
     <>
       <div className="wrapper bg-primary text-white min-h-screen relative ">
@@ -24,6 +24,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
