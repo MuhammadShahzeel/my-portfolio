@@ -3,6 +3,7 @@ import Img2 from "../assets/images/2.png";
 import Img3 from "../assets/images/3.png";
 import Img4 from "../assets/images/4.png";
 import Img5 from "../assets/images/5.png";
+import Img6 from "../assets/images/6.png";
 
 const projectsData = [
   {
@@ -30,7 +31,7 @@ const projectsData = [
     technologies: ["React", "CSS", "Vite"],
     liveUrl: "https://world-atlas-blue.vercel.app/",
     githubUrl: "https://github.com/MuhammadShahzeel/world-atlas.git",
-    imageUrl: Img3,
+    imageUrl: Img6,
   },
   {
     title: "Todo Application",
