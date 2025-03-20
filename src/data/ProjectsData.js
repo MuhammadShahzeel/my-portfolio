@@ -26,10 +26,10 @@ const projectsData = [
   {
     title: "World Atlas",
     description:
-      "A simple To-Do list app that allows users to create, edit, and delete tasks easily.",
+      "Explore country info with search, filters, and detailed pages, using React Router DOM and Axios.",
     technologies: ["React", "CSS", "Vite"],
     liveUrl: "https://world-atlas-blue.vercel.app/",
-    githubUrl: "https://github.com/MuhammadShahzeel/Todo-App.git",
+    githubUrl: "https://github.com/MuhammadShahzeel/world-atlas.git",
     imageUrl: Img3,
   },
   {
