@@ -24,6 +24,15 @@ const projectsData = [
     imageUrl: Img2,
   },
   {
+    title: "World Atlas",
+    description:
+      "A simple To-Do list app that allows users to create, edit, and delete tasks easily.",
+    technologies: ["React", "CSS", "Vite"],
+    liveUrl: "https://muhammadshahzeel.github.io/Todo-App/",
+    githubUrl: "https://github.com/MuhammadShahzeel/Todo-App.git",
+    imageUrl: Img3,
+  },
+  {
     title: "Todo Application",
     description:
       "A simple To-Do list app that allows users to create, edit, and delete tasks easily.",
