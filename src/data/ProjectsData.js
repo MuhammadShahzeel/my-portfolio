@@ -4,6 +4,7 @@ import Img3 from "../assets/images/3.png";
 import Img4 from "../assets/images/4.png";
 import Img5 from "../assets/images/5.png";
 import Img6 from "../assets/images/6.png";
+import Img7 from "../assets/images/7.png";
 
 const projectsData = [
   {
@@ -23,6 +24,18 @@ const projectsData = [
     liveUrl: "https://flow-script-parser.vercel.app/",
     githubUrl: "https://github.com/MuhammadShahzeel/flow-script-parser.git",
     imageUrl: Img2,
+  },
+
+
+
+  {
+    title: "Currency Converter",
+    description:
+      "React-based Application with Real-time Exchange Rates for 170+ World Currencies",
+    technologies: ["React", "Tailwind", "Vite"],
+    liveUrl: "https://currency-converter-bulkyv2bx-muhammadshahzeels-projects.vercel.app/",
+    githubUrl: "https://github.com/MuhammadShahzeel/currency-converter",
+    imageUrl: Img7,
   },
   {
     title: "World Atlas",
